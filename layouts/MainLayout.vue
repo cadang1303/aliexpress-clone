@@ -172,7 +172,7 @@
 </template>
 
 <script setup>
-import { useUserStore } from "~/stores/user";
+import { useUserStore } from "@/stores/user";
 const userStore = useUserStore();
 
 const client = useSupabaseClient();
