@@ -175,8 +175,9 @@
 import { useUserStore } from "@/stores/user";
 const userStore = useUserStore();
 
-const client = useSupabaseClient();
+const client = useSupabaseAuthClient();
 const user = useSupabaseUser();
+// const session = client.auth.session();
 
 let isAccountMenu = ref(false);
 let isCartHover = ref(false);
@@ -191,6 +192,14 @@ const searchByName = useDebounce(async () => {
   );
   isSearching.value = false;
 }, 100);
+
+// const logOut = async () => {
+//   try {
+//     const res = await 
+//   } catch (err) {
+//     console.error(err)
+//   }
+// }
 
 watch(
   () => searchItem.value,
